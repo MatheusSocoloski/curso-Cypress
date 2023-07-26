@@ -17,12 +17,13 @@ describe('Work with basic elements', () => {
     })
 })
 
-    it.only('TextFields', () => {
-        cy.get('#formNome').type('Cypress Test')
-        cy.get('#formNome').should('have.value', 'Cypress Test')
 
-        cy.get('#elementosForm\\:sugestoes')
-            .type('textarea')
-            .should('have.value', 'textarea')
+    it('RadioButton', () => {
+        cy.get('#formSexoFem')
+              .click()
+              .should('be.checked')
+
+        cy.get('#formSexoMasc').should('not.be.checked')
     })
+
 
